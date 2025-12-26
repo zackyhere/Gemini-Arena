@@ -1,0 +1,135 @@
+Bertindaklah sebagai Senior Frontend Developer. Buatkan saya kode lengkap single-file (HTML, CSS dalam <style>, dan JS dalam <script>) untuk sebuah Portfolio Website bergaya "Neo-Brutalism".
+
+Gunakan data spesifik dari bagian [DATA PERSONAL] di bawah ini untuk mengisi konten website.
+
+[DATA PERSONAL]
+Nama Lengkap: "M. Maulida Zacky"
+Nama Panggilan/Logo: "ZACKYHERE"
+Profesi Utama: "Fullstack Developer"
+Status Tambahan: "Siswa SMK" / "COOL DEV 🚀"
+Deskripsi Singkat: "Developer muda yang menguasai teknologi web modern, membangun solusi kreatif dengan sentuhan unik."
+Kontak WhatsApp: "https://wa.me/6281554269688"
+Social Media: Github, IG, Telegram, Email.
+
+Aset Gambar (Gunakan URL ini):
+1. Hero Image (3D Character): "https://github.com/zackyhere/Gemini-Arena/blob/main/hero.webp?raw=true"
+2. About Image (Grayscale): "https://github.com/zackyhere/Gemini-Arena/blob/main/about.webp?raw=true"
+3. Skills Cover Image: "https://github.com/zackyhere/Gemini-Arena/blob/main/skills.webp?raw=true"
+4. Sertifikat 1: "https://github.com/zackyhere/Gemini-Arena/blob/main/sertifikat1.webp?raw=true"
+5. Sertifikat 2: "https://github.com/zackyhere/Gemini-Arena/blob/main/sertifikat2.webp?raw=true"
+6. Sertifikat 3: "https://github.com/zackyhere/Gemini-Arena/blob/main/sertifikat3.webp?raw=true"
+
+Data Skill & Pengalaman:
+- Tech Stack: React, NodeJS, JavaScript, Tailwind, MySQL, PHP, HTML, Git, CSS.
+- Pengalaman: "Teknisi - KING'S FUN".
+
+INSTRUKSI TEKNIS:
+Kode harus 100% mereplikasi spesifikasi berikut tanpa pengurangan:
+
+1. Tech Stack & Setup
+Library: Tailwind CSS (via CDN), Lucide Icons (via CDN).
+Font: Google Fonts "Space Grotesk" (weights: 300, 400, 500, 600, 700).
+Tailwind Config:
+    Font Family: 'Space Grotesk', sans-serif.
+    Custom Colors:
+        neoYellow: '#FBbf24'
+        neoPurple: '#a855f7'
+        neoCyan: '#22d3ee'
+        neoGreen: '#4ade80'
+        neoRed: '#f87171'
+    Custom Shadows (Hard Shadow):
+        neo: '8px 8px 0px 0px #000000'
+        neo-hover: '12px 12px 0px 0px #000000'
+        neo-sm: '4px 4px 0px 0px #000000'
+
+2. Global CSS & Utilities (Dalam <style>)
+Body: bg-orange-50, text-black, overflow-x-hidden.
+Custom Scrollbar: Width 8px, track bg-[#f1f1f1] border-left 2px black, thumb bg-black radius 4px.
+Background Patterns:
+    .bg-grid-pattern: Linear gradient grid (gray lines on transparent).
+    .bg-dot-pattern: Radial gradient dots (black, opacity 0.1).
+    .bg-grid-technical: Grid background specific for white areas.
+    Animations (Keyframes wajib ada):
+        float-rotate: Floating sambil rotasi sedikit.
+        float-y: Floating vertikal.
+        float-random: Floating acak (translate X dan Y).
+        hero-slide-up & hero-pop-in: Untuk animasi masuk hero section.
+        reveal-left & reveal-up: Class untuk scroll trigger animation.
+Components Classes:
+    .pop-out-mask: clip-path: inset(-100% 0px 10px 0px round 40px).
+    .sticker-card & .browser-card: Border tebal 3px-4px hitam, hard shadow.
+    .nav-active: Style untuk menu aktif (bg-neoYellow, border 2px black, shadow).
+
+3. Struktur Konten & Layout (Section by Section)
+
+A. Navbar:
+Sticky top, bg-white/90, backdrop-blur, border-b-4 border-black.
+Logo kiri: Ambil dari [DATA PERSONAL] -> Nama Panggilan (Bold, border-2 black, shadow-neo-sm).
+Menu kanan: Dashboard, About Me, Skills, Certificates (gunakan class .nav-link).
+
+B. Hero Section (#home):
+Layout: Grid 2 kolom (Mobile 1 kolom). min-h-[90vh].
+Kolom Kiri (Visual):
+    Lingkaran dekorasi `bg-neoPurple` di belakang.
+    Card utama: `bg-neoYellow`, border-4 black, rounded-[40px], shadow-neo, rotasi 6 derajat (`rotate-6`), hover: `rotate-0`.
+    Gambar: Gunakan "Hero Image" dari [DATA PERSONAL] dengan class `.pop-out-mask`.
+    Badge: Gunakan "Status Tambahan" dari [DATA PERSONAL] di pojok kanan bawah.
+    Icon floating: Sparkles icon (`bg-neoCyan`) di pojok kiri atas.
+Kolom Kanan (Teks):
+    Headline: "Hi, I'M a [Profesi Utama]" (teks profesi dalam box `bg-neoYellow` border-4 black, rotasi -2 derajat).
+    Deskripsi: Gunakan deskripsi dari [DATA PERSONAL] dengan animasi `hero-entry-text`.
+    Buttons: "About Me" (Hitam, shadow-neo) dan "Skills" (Putih, border-4).
+
+C. About Section (`#about`):
+Background: `.bg-grid-technical`.
+Layout: Bento Grid (Grid 12 kolom).
+Kolom Kiri (4 col):
+    Card model "Browser Window" (`.browser-card`) dengan header titik merah/kuning/hijau.
+    Gambar: Gunakan "About Image" dari [DATA PERSONAL] (Grayscale, hover color).
+    Sticker melayang: "&lt;Dev /&gt;" (`bg-purple-400`).
+Kolom Kanan (8 col):
+    Card 1 (Bio): "BIO", Icon User, Deskripsi tentang status (Siswa SMK).
+    Grid Split (2 col):
+        Kiri: Card "Education" (`bg-cyan-200`) & Card "Tech Stack" (`bg-pink-300` dengan list text skill).
+        Kanan: Card "Experience" (`bg-green-200`) berisi list pengalaman dari [DATA PERSONAL].
+    Card Bawah: "Connect With Me" (`bg-black`, text white) dengan icon sosmed. Link WA ambil dari [DATA PERSONAL].
+
+D. Skills Section (`#skills`):
+Background: `bg-orange-50` + decor grid.
+Container Utama: 3D Split Container (`bg-white`, border-4 black, rounded-[30px], shadow-neo).
+Sisi Kiri (40%):
+    Full image cover: Gunakan "Skills Cover Image" dari [DATA PERSONAL].
+    Overlay gradient.
+    Teks dekoratif besar di bawah: "MY SKILLS".
+Sisi Kanan (60%):
+    Grid 3x3 (2 col di mobile).
+    Item: Icon skill (gunakan URL `devicons`) dalam box putih/warna warni border-3 black + Nama skill di bawahnya.
+    List Skill: Ambil daftar Tech Stack dari [DATA PERSONAL].
+    Setiap item memiliki hover effect `group-hover:-translate-y-2`.
+
+E. Certificates Section (`#certificates`):
+Style: `bg-neoYellow`, `border-t-4 border-black`, padding vertical `py-24`.
+Header: Judul "CERTIFICATES" dengan style `text-stroke-black` (putih dengan outline hitam tebal), font italic black.
+Gallery: Flex wrap, center gap.
+Card Sertifikat (3 item):
+    `bg-white`, border-4 black, shadow-neo.
+    Rotasi selang-seling (Card 1: `rotate-1`, Card 2: `-rotate-2`, Card 3: `rotate-2`). Hover: `rotate-0 scale-105`.
+    Gambar:
+        Gunakan URL "Sertifikat 1", "Sertifikat 2", dan "Sertifikat 3" dari [DATA PERSONAL].
+    Teks: Judul sertifikat dan sub-judul yang relevan.
+
+F. Footer:
+`bg-black`, text white, `border-t-4 border-white`.
+Konten: "LET'S WORK TOGETHER", Social links (Mail, IG, Github), Copyright text (Nama Lengkap).
+
+4. JavaScript Logic
+Lucide Icons: `lucide.createIcons()`.
+Intersection Observer:
+    Target class: `.reveal-up`, `.reveal-left`.
+    Action: Add class `.active-reveal` saat elemen masuk viewport (threshold 0.1).
+ScrollSpy (Active Menu):
+    Deteksi section yang sedang dilihat.
+    Tambahkan class `.nav-active` pada link navbar yang sesuai.
+    Trigger event scroll saat load.
+
+Pastikan kode bersih, tanpa komentar berlebihan, dan siap dijalankan (runnable).
